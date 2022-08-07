@@ -7,14 +7,13 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "build:tailwind": "tailwindcss --input input.css --output tailwind.css --no-autoprefixer && tailwind-rn",
-    "dev:tailwind": "concurrently \"tailwindcss --input input.css --output tailwind.css --no-autoprefixer --watch\" \"tailwind-rn --watch\""
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "nativewind": "^2.0.0-next.53",
     "react": "18.0.0",
     "react-native": "0.69.3",
-    "tailwind-rn": "^4.2.0"
+    "react-native-web": "^0.18.7"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

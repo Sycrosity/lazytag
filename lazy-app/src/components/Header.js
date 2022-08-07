@@ -11,18 +11,17 @@ import {
     View,
   } from 'react-native';
 
-import {useTailwind} from 'tailwind-rn';
-
-
 const Header = () => {
-    const tailwind = useTailwind();
 
     return (
 
-        <View>
-            <Text style={tailwind('dark:text-white')}>Hello, I am...</Text>
+        <View className='flex bg-red-400 dark:text-white'>
+            <View>
+                <Text className='bg-blue-500 text-red-600 text-xl text-center dark:text-white'>LazyTag</Text>
+            </View>
+            <Text className=''>Hello, I am...</Text>
             <TextInput
-                style={tailwind('dark:text-white h-10 dark:border-white border-black border-2')}
+                className=' h-10 dark:border-white border-black border-2'
                 defaultValue="Name me!"
             />
         </View>
