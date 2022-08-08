@@ -28,4 +28,3 @@
 - config todos
   - [optimise flatlist](https://reactnative.dev/docs/optimizing-flatlist-configuration)
   - [tests](https://reactnative.dev/docs/testing-overview)
-  - use typescript

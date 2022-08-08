@@ -19,7 +19,11 @@ import {
 
 import Header from './components/Header';
 
-const App = () => {
+export type Props = {
+  hermes: boolean
+};
+
+const App: React.FC<Props> = () => {
 
   //https://tailwindcss.com/
 
@@ -37,14 +41,18 @@ const App = () => {
     return () => clearInterval(toggle);
   })
 
-  userDark = true;
+  // setIsDark(true);
+
+
 
   return (
-    <SafeAreaView className='flex items-center justify-center w-full bg-neutral-900 h-full'>
+    <SafeAreaView className='flex items-center w-full bg-neutral-900 h-full'>
       <StatusBar />
       <Header />
       <View>
         <Text className='text-gray-300'>main</Text>
+        <Text className='text-gray-300'>{isShowingText ? 'hi' : 'blink'}</Text>
+
       </View>
     </SafeAreaView>
   );

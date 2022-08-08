@@ -21,7 +21,7 @@ const Header = () => {
             </View>
             <Text className=''>Hello, I am...</Text>
             <TextInput
-                className=' h-10 dark:border-white border-black border-2'
+                className='h-10 dark:border-white border-black border-2'
                 defaultValue="Name me!"
             />
         </View>

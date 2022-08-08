@@ -6,7 +6,6 @@
 
     /* Completeness */
     "skipLibCheck": true,
-    "strict": false
     /* Skip type checking all .d.ts files. */
   },
   // "include": ["src/**/*"],
