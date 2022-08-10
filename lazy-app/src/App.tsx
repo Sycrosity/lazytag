@@ -13,26 +13,31 @@ import {
   SafeAreaView,
   StatusBar,
   Text,
-  useColorScheme,
+  TouchableHighlight,
+  TouchableOpacity,
+  // useColorScheme,
   View,
 } from 'react-native';
 
+
 import Header from './components/Header';
-
-export type Props = {
-  hermes: boolean
-};
-
-const App: React.FC<Props> = () => {
+import DarkLightToggle from './components/DarkLightToggle';
+import Light from './components/icons/Light';
+import Dark from './components/icons/Dark';
 
   //https://tailwindcss.com/
+import tw, { useDeviceContext, useAppColorScheme } from 'twrnc';
 
-  //sets to whatever the phones colour scheme is, and creates a state with for it
-  const isDarkMode = useColorScheme() === 'dark';
-  const [isDark, setIsDark] = useState(isDarkMode);
 
+const App: React.FC = () => {
+
+  useDeviceContext(tw, { withDeviceColorScheme: false });
+
+  //allows setting and reading of the colour scheme (sets to phone colour scheme by default)
+  const [colorScheme, toggleColorScheme, setColorScheme] = useAppColorScheme(tw);
+
+  //use effect loop example, triggering a text change every 1000ms
   const [isShowingText, setIsShowingText] = useState(true);
-
   useEffect(() => {
     const toggle = setInterval(() => {
       setIsShowingText(!isShowingText);
@@ -41,18 +46,24 @@ const App: React.FC<Props> = () => {
     return () => clearInterval(toggle);
   })
 
-  // setIsDark(true);
-
-
 
   return (
-    <SafeAreaView className='flex items-center w-full bg-neutral-900 h-full'>
-      <StatusBar />
-      <Header />
-      <View>
-        <Text className='text-gray-300'>main</Text>
-        <Text className='text-gray-300'>{isShowingText ? 'hi' : 'blink'}</Text>
+    <SafeAreaView style={tw`h-full w-full dark:bg-neutral-900 flex`}>
 
+      <StatusBar />
+
+      <Header theme={
+        {
+          value: colorScheme,
+          toggle: toggleColorScheme
+        }} 
+      />
+
+
+      <View>
+
+        <Text style={tw`dark:text-gray-300 `}>{colorScheme === 'light' ? 'ahhhhhhh the light!' : 'dark modeee :)'}</Text>
+        <Text style={tw`dark:text-gray-300`} >{isShowingText ? 'bleep' : 'blink'}</Text>
       </View>
     </SafeAreaView>
   );

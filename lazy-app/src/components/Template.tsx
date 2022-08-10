@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
 import {
     Text,
     View,
     } from 'react-native';
 
-const Header = () => {
+import tw from 'twrnc';
+
+const Template: React.FC = () => {
 
     return (
 
         <View>
-            <Text className='text-white'>Template</Text>
+            <Text style={tw`text-white`}>Template</Text>
         </View>
 
     );
 
 }
 
-export default Header;
+export default Template;

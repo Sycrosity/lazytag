@@ -7,6 +7,9 @@
 - UI/UX
   - [tailwind](https://tailwindcss.com) (alternative to css)
     - [element sizing](https://tailwindcss.com/docs/flex-basis)
+    - [twrnc](https://github.com/jaredh159/tailwind-react-native-classnames) (what we are using for tailwind in the app)
+      - [react native box shadows](https://github.com/jaredh159/tailwind-react-native-classnames)
+    - 
 
 
 - tutorials

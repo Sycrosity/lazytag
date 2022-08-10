@@ -1,30 +1,35 @@
 import React from 'react';
 
 import {
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
-    StyleSheet,
+    ColorSchemeName,
     Text,
     TextInput,
-    useColorScheme,
     View,
   } from 'react-native';
 
-const Header = () => {
+import tw from 'twrnc';
+
+import DarkLightToggle from './DarkLightToggle';
+
+type Props = {
+    theme: {
+        value: ColorSchemeName,
+        toggle: Function
+    }
+};
+
+const Header: React.FC<Props> = (props) => {
+
+
 
     return (
 
-        <View className='flex bg-red-400 dark:text-white'>
-            <View>
-                <Text className='bg-blue-500 text-red-600 text-xl text-center dark:text-white'>LazyTag</Text>
-            </View>
-            <Text className=''>Hello, I am...</Text>
-            <TextInput
-                className='h-10 dark:border-white border-black border-2'
-                defaultValue="Name me!"
-            />
+        <View style={tw`flex-row w-full`}>
+            <Text style={tw`dark:text-gray-300 text-3xl text-center flex-1`}>LazyTag</Text>
+            <DarkLightToggle value={props.theme.value} toggle={props.theme.toggle} />
         </View>
+
+
 
     );
 
