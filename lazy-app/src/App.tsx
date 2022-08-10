@@ -8,6 +8,10 @@
  * @format
  */
 
+//https://tailwindcss.com/
+//https://github.com/jaredh159/tailwind-react-native-classnames
+import tw, { useDeviceContext, useAppColorScheme } from 'twrnc';
+
 import React, { useState, useEffect } from 'react';
 import {
   SafeAreaView,
@@ -19,15 +23,8 @@ import {
   View,
 } from 'react-native';
 
-
 import Header from './components/Header';
-import DarkLightToggle from './components/DarkLightToggle';
-import Light from './components/icons/Light';
-import Dark from './components/icons/Dark';
-
-  //https://tailwindcss.com/
-import tw, { useDeviceContext, useAppColorScheme } from 'twrnc';
-
+import BottomNavBar from './components/BottomNavBar';
 
 const App: React.FC = () => {
 
@@ -37,13 +34,14 @@ const App: React.FC = () => {
   const [colorScheme, toggleColorScheme, setColorScheme] = useAppColorScheme(tw);
 
   //use effect loop example, triggering a text change every 1000ms
-  const [isShowingText, setIsShowingText] = useState(true);
+  // const [isShowingText, setIsShowingText] = useState(true);
+  
   useEffect(() => {
-    const toggle = setInterval(() => {
-      setIsShowingText(!isShowingText);
-    }, 1000);
+    // const toggle = setInterval(() => {
+    //   setIsShowingText(!isShowingText);
+    // }, 1000);
 
-    return () => clearInterval(toggle);
+    // return () => clearInterval(toggle);
   })
 
 
@@ -62,9 +60,11 @@ const App: React.FC = () => {
 
       <View>
 
-        <Text style={tw`dark:text-gray-300 `}>{colorScheme === 'light' ? 'ahhhhhhh the light!' : 'dark modeee :)'}</Text>
-        <Text style={tw`dark:text-gray-300`} >{isShowingText ? 'bleep' : 'blink'}</Text>
+        
+
       </View>
+
+      <BottomNavBar />
     </SafeAreaView>
   );
 };

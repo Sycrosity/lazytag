@@ -27,7 +27,3 @@
 - [how to optimise performance](https://reactnative.dev/docs/performance)
   - use `yarn react-native run-android --active-arch-only` for ~75% faster android build times
   - [if we need to build native code](https://reactnative.dev/docs/build-speed#use-a-compiler-cache)
-
-- config todos
-  - [optimise flatlist](https://reactnative.dev/docs/optimizing-flatlist-configuration)
-  - [tests](https://reactnative.dev/docs/testing-overview)
