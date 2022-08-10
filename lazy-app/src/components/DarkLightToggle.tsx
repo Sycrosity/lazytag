@@ -7,8 +7,8 @@ import {
     Text
     } from 'react-native';
 
-import Light from '../components/icons/Light';
-import Dark from '../components/icons/Dark';
+import SunIcon from '../components/icons/sun.svg';
+import MoonIcon from '../components/icons/moon.svg';
 import { Style } from 'twrnc/dist/esm/types';
 
 
@@ -27,12 +27,13 @@ const DarkLightToggle: React.FC<Props> = (props) => {
             style={props.style}
         >
 
-            { props.value === "light" ? <Light /> : <Dark /> }
-
+            {
+                props.value === "light" ? 
+                <SunIcon width="50" height="50" stroke="lightblue" /> : 
+                <MoonIcon width="50" height="50" stroke="lightblue" />
+            }
         </TouchableOpacity>
-
     );
-
 }
 
 export default DarkLightToggle;

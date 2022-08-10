@@ -6,8 +6,7 @@
 
 ####before *too* much code is changed
 
-1. [change svg format to allow for dynamic colours](https://github.com/hexboy/react-native-svg-dynamic-colors)
-
+1. 
 
 ####any time
 

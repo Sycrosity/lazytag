@@ -46,7 +46,7 @@ const App: React.FC = () => {
 
 
   return (
-    <SafeAreaView style={tw`h-full w-full dark:bg-neutral-900 flex`}>
+    <SafeAreaView style={tw`h-full w-full dark:bg-neutral-900 flex bg-gray-100`}>
 
       <StatusBar />
 
@@ -64,7 +64,12 @@ const App: React.FC = () => {
 
       </View>
 
-      <BottomNavBar />
+      <BottomNavBar theme={
+        {
+          value: colorScheme,
+          toggle: toggleColorScheme
+        }}
+      />
     </SafeAreaView>
   );
 };

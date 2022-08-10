@@ -2,42 +2,64 @@
 import React from 'react';
 import tw from 'twrnc';
 
-import { View } from 'react-native';
+import { ColorSchemeName, View } from 'react-native';
 
-import Cog from './icons/Cog';
-import ChartBar from './icons/ChartBar';
-import Beaker from './icons/Beaker';
-import User from './icons/User';
+import CogIcon from './icons/cog.svg';
+import ChartBarIcon from './icons/chart-bar.svg';
+import BeakerIcon from './icons/beaker.svg';
+import UserIcon from './icons/user.svg';
 
 import NavButton from './NavButton';
+import Label from './Label';
 
-const BottomNavBar: React.FC = () => {
+type Props = {
+    theme: {
+        value: ColorSchemeName,
+        toggle: Function,
+    }
+};
+
+const BottomNavBar: React.FC<Props> = (props) => {
+
 
     return (
 
         <View style={tw`absolute bottom-0 p-4 flex-row justify-between w-full`}>
 
-            {/* <Text style={tw`dark:text-gray-300 `}>Template</Text> */}
+                <Label label="settings">
 
-                <NavButton onPress={() => {}}>
-    
-                    <Cog />
-                </NavButton>
+                    <NavButton onPress={() => {}}>
+        
+                        <CogIcon width="50" height="50" stroke={ props.theme.value === 'light' ? "gray" : "white"} />
+                    </NavButton>
+                </Label>
 
-                <NavButton onPress={() => {}}>
-    
-                    <ChartBar />
-                </NavButton>
 
-                <NavButton onPress={() => {}}>
-    
-                    <Beaker />
-                </NavButton>
+                <Label label="stats">
 
-                <NavButton onPress={() => {}}>
-                    
-                    <User />
-                </NavButton>
+                    <NavButton onPress={() => {}}>
+        
+                        <ChartBarIcon width="50" height="50" stroke={ props.theme.value === 'light' ? "gray" : "white"} />
+                    </NavButton>
+                </Label>
+
+
+                <Label label="the lab">
+
+                    <NavButton onPress={() => {}}>
+        
+                        <BeakerIcon width="50" height="50" stroke={ props.theme.value === 'light' ? "gray" : "white"} />
+                    </NavButton>
+                </Label>
+
+
+                <Label label="profile">
+
+                    <NavButton onPress={() => {}}>
+                        
+                        <UserIcon width="50" height="50" stroke={ props.theme.value === 'light' ? "gray" : "white"} />
+                    </NavButton>
+                </Label>
         </View>
     );
 }
