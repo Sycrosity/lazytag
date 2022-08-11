@@ -17,7 +17,7 @@ const Label: React.FC<PropsWithChildren<Props>> = (props) => {
 
     return (
 
-        <View style={tw` flex-column`}>
+        <View style={tw``}>
             
             {props.children}
 

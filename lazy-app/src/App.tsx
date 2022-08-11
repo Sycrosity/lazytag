@@ -11,20 +11,21 @@
 //https://tailwindcss.com/
 //https://github.com/jaredh159/tailwind-react-native-classnames
 import tw, { useDeviceContext, useAppColorScheme } from 'twrnc';
+import React from 'react';
 
-import React, { useState, useEffect } from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  Text,
-  TouchableHighlight,
-  TouchableOpacity,
-  // useColorScheme,
-  View,
-} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
 
-import Header from './components/Header';
-import BottomNavBar from './components/BottomNavBar';
+
+
+import Home from './screens/Home';
+import Details from './screens/Details';
+
+import { ColorSchemeName, StatusBar } from 'react-native';
+
+import { Context } from './components/Context';
+
 
 const App: React.FC = () => {
 
@@ -33,44 +34,21 @@ const App: React.FC = () => {
   //allows setting and reading of the colour scheme (sets to phone colour scheme by default)
   const [colorScheme, toggleColorScheme, setColorScheme] = useAppColorScheme(tw);
 
-  //use effect loop example, triggering a text change every 1000ms
-  // const [isShowingText, setIsShowingText] = useState(true);
-  
-  useEffect(() => {
-    // const toggle = setInterval(() => {
-    //   setIsShowingText(!isShowingText);
-    // }, 1000);
-
-    // return () => clearInterval(toggle);
-  })
-
-
   return (
-    <SafeAreaView style={tw`h-full w-full dark:bg-neutral-900 flex bg-gray-100`}>
-
-      <StatusBar />
-
-      <Header theme={
-        {
+    <Context.Provider value={
+      {
+        theme: {
           value: colorScheme,
           toggle: toggleColorScheme
-        }} 
-      />
-
-
-      <View>
-
-        
-
-      </View>
-
-      <BottomNavBar theme={
-        {
-          value: colorScheme,
-          toggle: toggleColorScheme
-        }}
-      />
-    </SafeAreaView>
+        }
+      }}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Details" component={Details} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Context.Provider>
   );
 };
 

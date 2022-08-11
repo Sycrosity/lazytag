@@ -7,6 +7,7 @@
 ####before *too* much code is changed
 
 1. [setup navigation](https://reactnavigation.org/docs/getting-started/)
+2. [turn appropriate props into contexts](https://reactjs.org/docs/context.html#when-to-use-context)
 
 ####any time
 
