@@ -23,7 +23,7 @@ const Header: React.FC<Props> = (props) => {
 
     return (
 
-        <View style={tw`flex-row w-full relative`}>
+        <View style={tw`flex-row w-full relative mt-8`}>
 
             <View style={tw`flex-1`}>
 

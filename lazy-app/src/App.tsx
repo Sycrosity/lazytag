@@ -14,17 +14,20 @@ import tw, { useDeviceContext, useAppColorScheme } from 'twrnc';
 
 import React, { useState, useEffect } from 'react';
 import {
-  SafeAreaView,
+  useColorScheme,
   StatusBar,
+  SafeAreaView,
   Text,
   TouchableHighlight,
   TouchableOpacity,
   // useColorScheme,
   View,
+  Appearance,
 } from 'react-native';
 
 import Header from './components/Header';
 import BottomNavBar from './components/BottomNavBar';
+import Menu from './components/Menu';
 
 const App: React.FC = () => {
 
@@ -57,12 +60,7 @@ const App: React.FC = () => {
         }} 
       />
 
-
-      <View>
-
-        
-
-      </View>
+      <Menu />
 
       <BottomNavBar theme={
         {
