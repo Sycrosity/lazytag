@@ -4,10 +4,10 @@ import tw from 'twrnc';
 
 import { ColorSchemeName, View } from 'react-native';
 
-import CogIcon from './icons/cog.svg';
-import ChartBarIcon from './icons/chart-bar.svg';
-import BeakerIcon from './icons/beaker.svg';
-import UserIcon from './icons/user.svg';
+import CogIcon from '../assets/icons/cog.svg';
+import ChartBarIcon from '../assets/icons/chart-bar.svg';
+import BeakerIcon from '../assets/icons/beaker.svg';
+import UserIcon from '../assets/icons/user.svg';
 
 import NavButton from './NavButton';
 import Label from './Label';

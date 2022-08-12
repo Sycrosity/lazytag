@@ -7,8 +7,8 @@ import {
     Text
     } from 'react-native';
 
-import SunIcon from '../components/icons/sun.svg';
-import MoonIcon from '../components/icons/moon.svg';
+import SunIcon from '../assets/icons/sun.svg';
+import MoonIcon from '../assets/icons/moon.svg';
 import { Style } from 'twrnc/dist/esm/types';
 
 import tw from 'twrnc';
