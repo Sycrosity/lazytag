@@ -39,6 +39,11 @@ npm-debug.log
 yarn-error.log
 package-lock.json
 
+#lockfiles
+bun.lockb
+yarn.lock
+package-lock.json
+
 
 # BUCK
 buck-out/
@@ -68,3 +73,4 @@ buck-out/
 # Tailwind
 # tailwind.css
 # tailwind.json
+
