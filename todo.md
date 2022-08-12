@@ -7,6 +7,7 @@
 ####before *too* much code is changed
 
 1. [setup navigation](https://reactnavigation.org/docs/getting-started/)
+2. fix dark mode (currently, if user choice is dark mode originally, is a wierd light mode dark mode combo and doesn't work)
 
 ####any time
 
