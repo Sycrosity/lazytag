@@ -13,6 +13,8 @@
 
 1. [optimise flatlist](https://reactnative.dev/docs/optimizing-flatlist-configuration)
 2. [add tests](https://reactnative.dev/docs/testing-overview)
+3. add readme to repo
+4. add build instructions
 
 ####in the future
 
